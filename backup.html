@@ -17,15 +17,13 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
 
     <!-- Bootstrap core CSS -->
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet" /> -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <!-- <link href="css/my_style.css" rel="stylesheet" /> -->
-
-    <link href="tailwindcss/dist/tailwind.css" rel="stylesheet" />
+    <link href="css/my_style.css" rel="stylesheet" />
   </head>
-  <body class="bg-gray-700">
-    <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button
@@ -50,183 +48,44 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
+        <!--/.nav-collapse -->
       </div>
-    </nav> -->
-    <div class="flex justify-between mx-auto">
-      <div class="flex-shrink-0 items-center p-2 pt-48">
+    </nav>
+    <div class="row">
+      <div class="col-md-2">
         <div
           id="toolbox"
-          class="grid grid-cols-1 gap-1 bg-white border rounded-md p-1"
+          class="btn-group-vertical btn-group-lg"
           role="group"
           aria-label="..."
         >
-          <button
-            id="add-text"
-            type="button"
-            class="
-              px-4
-              py-4
-              border border-transparent
-              text-sm
-              leading-4
-              font-medium
-              rounded-md
-              shadow-sm
-              text-white
-              bg-indigo-600
-              hover:bg-indigo-700
-              focus:outline-none
-              focus:ring-2
-              focus:ring-offset-2
-              focus:ring-indigo-500
-            "
-          >
+          <button id="add-text" type="button" class="btn btn-default">
             <i class="fa fa-font" aria-hidden="true" title="Add text"></i>
           </button>
-          <button
-            id="shapes"
-            type="button"
-            class="
-              px-4
-              py-4
-              border border-transparent
-              text-sm
-              leading-4
-              font-medium
-              rounded-md
-              shadow-sm
-              text-white
-              bg-indigo-600
-              hover:bg-indigo-700
-              focus:outline-none
-              focus:ring-2
-              focus:ring-offset-2
-              focus:ring-indigo-500
-            "
-          >
+          <button id="shapes" type="button" class="btn btn-default">
             <i
               class="fa fa-object-ungroup"
               aria-hidden="true"
               title="Shapes"
             ></i>
           </button>
-          <button
-            id="images"
-            type="button"
-            class="
-              px-4
-              py-4
-              border border-transparent
-              text-sm
-              leading-4
-              font-medium
-              rounded-md
-              shadow-sm
-              text-white
-              bg-indigo-600
-              hover:bg-indigo-700
-              focus:outline-none
-              focus:ring-2
-              focus:ring-offset-2
-              focus:ring-indigo-500
-            "
-          >
+          <button id="images" type="button" class="btn btn-default">
             <i class="fa fa-picture-o" aria-hidden="true" title="Images"></i>
           </button>
-          <button
-            id="themes"
-            type="button"
-            class="
-              px-4
-              py-4
-              border border-transparent
-              text-sm
-              leading-4
-              font-medium
-              rounded-md
-              shadow-sm
-              text-white
-              bg-indigo-600
-              hover:bg-indigo-700
-              focus:outline-none
-              focus:ring-2
-              focus:ring-offset-2
-              focus:ring-indigo-500
-            "
-          >
+          <button id="themes" type="button" class="btn btn-default">
             <i class="fa fa-id-card-o" aria-hidden="true" title="Themes"></i>
           </button>
-          <button
-            id="clear"
-            type="button"
-            class="
-              px-4
-              py-4
-              border border-transparent
-              text-sm
-              leading-4
-              font-medium
-              rounded-md
-              shadow-sm
-              text-white
-              bg-indigo-600
-              hover:bg-indigo-700
-              focus:outline-none
-              focus:ring-2
-              focus:ring-offset-2
-              focus:ring-indigo-500
-            "
-          >
+          <button id="clear" type="button" class="btn btn-default">
             <i
               class="fa fa-trash-o"
               aria-hidden="true"
               title="Clear canvas"
             ></i>
           </button>
-          <button
-            id="save"
-            type="button"
-            class="
-              px-4
-              py-4
-              border border-transparent
-              text-sm
-              leading-4
-              font-medium
-              rounded-md
-              shadow-sm
-              text-white
-              bg-indigo-600
-              hover:bg-indigo-700
-              focus:outline-none
-              focus:ring-2
-              focus:ring-offset-2
-              focus:ring-indigo-500
-            "
-          >
+          <button id="save" type="button" class="btn btn-default">
             <i class="fa fa-floppy-o" aria-hidden="true" title="Save"></i>
           </button>
-          <button
-            id="download"
-            type="button"
-            class="
-              px-4
-              py-4
-              border border-transparent
-              text-sm
-              leading-4
-              font-medium
-              rounded-md
-              shadow-sm
-              text-white
-              bg-indigo-600
-              hover:bg-indigo-700
-              focus:outline-none
-              focus:ring-2
-              focus:ring-offset-2
-              focus:ring-indigo-500
-            "
-          >
+          <button id="download" type="button" class="btn btn-default">
             <i
               class="fa fa-download"
               aria-hidden="true"
@@ -235,14 +94,9 @@
           </button>
         </div>
       </div>
-      <div class="flex pt-40">
+      <div class="col-md-8">
         <div class="canvas">
-          <canvas
-            id="canvas"
-            width="750"
-            height="450"
-            class="rounded-3xl shadow-2xl"
-          ></canvas>
+          <canvas id="canvas" width="750" height="450"></canvas>
           <script type="text/javascript">
             var canvas = new fabric.Canvas("canvas", {
               backgroundColor: "#FFFFFF",
@@ -256,779 +110,294 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-shrink-0 p-2">
-        <div class="grid grid-cols-1 gap-4">
-          <div id="properties" class="bg-white shadow rounded-lg">
-            <div class="p-3">
-              <h4 style="color: grey">Properties</h4>
-              <div class="mt-1 rounded-md shadow-sm flex" style="display: none">
-                <span
-                  class="
-                    bg-gray-50
-                    border border-r-0 border-gray-300
-                    rounded-l-md
-                    px-3
-                    w-40
-                    inline-flex
-                    items-center
-                    text-gray-500 text-sm
-                  "
-                  id="basic-addon1"
-                  >Font:</span
-                >
-                <select
-                  class="
-                    focus:ring-sky-500 focus:border-sky-500
-                    flex-grow
-                    block
-                    w-full
-                    min-w-0
-                    rounded-none rounded-r-md
-                    text-sm
-                    border-gray-300
-                  "
-                  id="text-font"
-                >
-                  <option>Helvetica</option>
-                  <option>Arial</option>
-                  <option>Arial Black</option>
-                  <option>Comic Sans MS</option>
-                  <option>Georgia</option>
-                  <option>Impact</option>
-                  <option>Lucida Sans Unicode</option>
-                  <option>Palatino Linotype</option>
-                  <option>Tahoma</option>
-                  <option>Times New Roman</option>
-                  <option>Trebuchet MS</option>
-                  <option>Verdana</option>
-                </select>
-              </div>
-              <div class="mt-1 rounded-md shadow-sm flex" style="display: none">
-                <span
-                  class="
-                    bg-gray-50
-                    border border-r-0 border-gray-300
-                    rounded-l-md
-                    px-3
-                    w-40
-                    inline-flex
-                    items-center
-                    text-gray-500 text-sm
-                  "
-                  id="basic-addon1"
-                  >Font Size:</span
-                >
-                <input
-                  id="text-fontsize"
-                  type="text"
-                  class="
-                    focus:ring-sky-500 focus:border-sky-500
-                    flex-grow
-                    block
-                    w-full
-                    min-w-0
-                    rounded-none rounded-r-md
-                    text-sm
-                    border-gray-300
-                  "
-                  value=""
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-              <div class="mt-1 rounded-md shadow-sm flex" style="display: none">
-                <span
-                  class="
-                    bg-gray-50
-                    border border-r-0 border-gray-300
-                    rounded-l-md
-                    px-3
-                    w-40
-                    inline-flex
-                    items-center
-                    text-gray-500 text-sm
-                  "
-                  id="basic-addon1"
-                  >Font Weight:</span
-                >
-                <select
-                  class="
-                    focus:ring-sky-500 focus:border-sky-500
-                    flex-grow
-                    block
-                    w-full
-                    min-w-0
-                    rounded-none rounded-r-md
-                    text-sm
-                    border-gray-300
-                  "
-                  id="text-fontweight"
-                >
-                  <option selected>normal</option>
-                  <option>bold</option>
-                </select>
-              </div>
-              <div class="mt-1 rounded-md shadow-sm flex">
-                <span
-                  class="
-                    bg-gray-50
-                    border border-r-0 border-gray-300
-                    rounded-l-md
-                    px-3
-                    w-40
-                    inline-flex
-                    items-center
-                    text-gray-500 text-sm
-                  "
-                  id="basic-addon1"
-                  >Width:</span
-                >
-                <input
-                  id="width"
-                  type="text"
-                  class="
-                    focus:ring-sky-500 focus:border-sky-500
-                    flex-grow
-                    block
-                    w-full
-                    min-w-0
-                    rounded-none rounded-r-md
-                    text-sm
-                    border-gray-300
-                  "
-                  value=""
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-              <div class="mt-1 rounded-md shadow-sm flex">
-                <span
-                  class="
-                    bg-gray-50
-                    border border-r-0 border-gray-300
-                    rounded-l-md
-                    px-3
-                    w-40
-                    inline-flex
-                    items-center
-                    text-gray-500 text-sm
-                  "
-                  id="basic-addon1"
-                  >Height:</span
-                >
-                <input
-                  id="height"
-                  type="text"
-                  class="
-                    focus:ring-sky-500 focus:border-sky-500
-                    flex-grow
-                    block
-                    w-full
-                    min-w-0
-                    rounded-none rounded-r-md
-                    text-sm
-                    border-gray-300
-                  "
-                  value=""
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-              <div class="mt-1 rounded-md shadow-sm flex">
-                <span
-                  class="
-                    bg-gray-50
-                    border border-r-0 border-gray-300
-                    rounded-l-md
-                    px-3
-                    w-40
-                    inline-flex
-                    items-center
-                    text-gray-500 text-sm
-                  "
-                  id="basic-addon1"
-                  >Angle:</span
-                >
-                <input
-                  id="angle"
-                  type="text"
-                  class="
-                    focus:ring-sky-500 focus:border-sky-500
-                    flex-grow
-                    block
-                    w-full
-                    min-w-0
-                    rounded-none rounded-r-md
-                    text-sm
-                    border-gray-300
-                  "
-                  value=""
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-              <div class="mt-1 rounded-md shadow-sm flex">
-                <span
-                  class="
-                    bg-gray-50
-                    border border-r-0 border-gray-300
-                    rounded-l-md
-                    px-3
-                    w-40
-                    inline-flex
-                    items-center
-                    text-gray-500 text-sm
-                  "
-                  id="basic-addon1"
-                  >Color:</span
-                >
-                <input
-                  id="color"
-                  type="text"
-                  class="
-                    focus:ring-sky-500 focus:border-sky-500
-                    flex-grow
-                    block
-                    w-full
-                    min-w-0
-                    rounded-none rounded-r-md
-                    text-sm
-                    border-gray-300
-                  "
-                  value=""
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-              <div class="mt-1 rounded-md shadow-sm flex">
-                <span
-                  class="
-                    bg-gray-50
-                    border border-r-0 border-gray-300
-                    rounded-l-md
-                    px-3
-                    w-40
-                    inline-flex
-                    items-center
-                    text-gray-500 text-sm
-                  "
-                  id="basic-addon1"
-                  >Opacity:</span
-                >
-                <input
-                  id="opacity"
-                  type="text"
-                  class="
-                    focus:ring-sky-500 focus:border-sky-500
-                    flex-grow
-                    block
-                    w-full
-                    min-w-0
-                    rounded-none rounded-r-md
-                    text-sm
-                    border-gray-300
-                  "
-                  value=""
-                  aria-describedby="basic-addon1"
-                />
-              </div>
+      <div class="col-md-2">
+        <div id="properties" class="panel panel-default">
+          <div class="panel-body">
+            <h4 style="color: grey">Properties</h4>
+            <div class="input-group" style="display: none">
+              <span class="input-group-addon" id="basic-addon1">Font:</span>
+              <select class="form-control" id="text-font">
+                <option>Helvetica</option>
+                <option>Arial</option>
+                <option>Arial Black</option>
+                <option>Comic Sans MS</option>
+                <option>Georgia</option>
+                <option>Impact</option>
+                <option>Lucida Sans Unicode</option>
+                <option>Palatino Linotype</option>
+                <option>Tahoma</option>
+                <option>Times New Roman</option>
+                <option>Trebuchet MS</option>
+                <option>Verdana</option>
+              </select>
+            </div>
+            <div class="input-group" style="display: none">
+              <span class="input-group-addon" id="basic-addon1"
+                >Font Size:</span
+              >
+              <input
+                id="text-fontsize"
+                type="text"
+                class="form-control"
+                value=""
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group" style="display: none">
+              <span class="input-group-addon" id="basic-addon1"
+                >Font Weight:</span
+              >
+              <select class="form-control" id="text-fontweight">
+                <option selected>normal</option>
+                <option>bold</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Width:</span>
+              <input
+                id="width"
+                type="text"
+                class="form-control"
+                value=""
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Height:</span>
+              <input
+                id="height"
+                type="text"
+                class="form-control"
+                value=""
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Angle:</span>
+              <input
+                id="angle"
+                type="text"
+                class="form-control"
+                value=""
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Color:</span>
+              <input
+                id="color"
+                type="text"
+                class="form-control"
+                value=""
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Opacity:</span>
+              <input
+                id="opacity"
+                type="text"
+                class="form-control"
+                value=""
+                aria-describedby="basic-addon1"
+              />
             </div>
           </div>
-          <!--end of properties panel-->
-          <div id="layers" class="bg-white shadow rounded-lg">
-            <div class="p-3">
-              <h4 style="color: grey">Layers</h4>
+        </div>
+        <!--end of properties panel-->
+        <div id="layers" class="panel panel-default">
+          <div class="panel-body">
+            <h4 style="color: grey">Layers</h4>
 
-              <ul class="background">
-                <li onclick="deneme();">
-                  <div class="bg-white shadow rounded-lg">
-                    <div class="layer p-3">
-                      Background
-                      <button
-                        id="canvas-props"
-                        type="button"
-                        class="
-                          px-3
-                          py-2
-                          border border-transparent
-                          text-sm
-                          leading-4
-                          font-medium
-                          rounded-md
-                          shadow-sm
-                          text-white
-                          bg-indigo-600
-                          hover:bg-indigo-700
-                          focus:outline-none
-                          focus:ring-2
-                          focus:ring-offset-2
-                          focus:ring-indigo-500
-                        "
-                      >
-                        <i class="fa fa-cog" aria-hidden="true"></i>
-                      </button>
-                    </div>
+            <ul class="background">
+              <li onclick="deneme();">
+                <div class="panel panel-default">
+                  <div class="layer panel-body">
+                    Background
+                    <button
+                      id="canvas-props"
+                      type="button"
+                      class="btn btn-default"
+                    >
+                      <i class="fa fa-cog" aria-hidden="true"></i>
+                    </button>
                   </div>
-                </li>
-              </ul>
-              <ul id="sortable">
-                <!-- Magic happens here-->
-              </ul>
+                </div>
+              </li>
+            </ul>
+            <ul id="sortable">
+              <!-- Magic happens here-->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Shapes Panel-->
+    <div id="shapes-panel" class="footer" style="display: none">
+      <div class="panel panel-default" style="height: 100%">
+        <div class="panel-body">
+          <div class="footer-panel">
+            <div class="footer-item">
+              <button id="add-rect" type="button" class="btn btn-default">
+                <i
+                  style="color: #e74c3c; font-size: 80px"
+                  class="fa fa-stop"
+                  aria-hidden="true"
+                ></i>
+                <p>Rectangle</p>
+              </button>
+            </div>
+            <div class="footer-item">
+              <button id="add-circ" type="button" class="btn btn-default">
+                <i
+                  style="color: #3498db; font-size: 80px"
+                  class="fa fa-circle"
+                  aria-hidden="true"
+                ></i>
+                <p>Circle</p>
+              </button>
+            </div>
+            <div class="footer-item">
+              <button id="add-tri" type="button" class="btn btn-default">
+                <i
+                  style="
+                    color: #2ecc71;
+                    font-size: 80px;
+                    -webkit-transform: rotate(270deg);
+                  "
+                  class="fa fa-play"
+                  aria-hidden="true"
+                ></i>
+                <p>Triangle</p>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <footer
-      class="
-        h-40
-        w-full
-        m-auto
-        fixed
-        bottom-0
-        bg-black bg-opacity-10
-        z-0
-        flex
-        justify-center
-        items-center
-      "
-    >
-      <!--Shapes Panel-->
-      <div id="shapes-panel" class="footer" style="display: none">
-        <div
-          class="bg-white overflow-hidden shadow rounded-lg"
-          style="height: 100%"
-        >
-          <div class="p-3">
-            <div class="grid grid-flow-col auto-cols-max gap-2">
-              <div class="footer-item">
-                <button
-                  id="add-rect"
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                >
-                  <i
-                    style="color: #e74c3c; font-size: 80px"
-                    class="fa fa-stop"
-                    aria-hidden="true"
-                  ></i>
-                  <p>Rectangle</p>
-                </button>
-              </div>
-              <div class="footer-item">
-                <button
-                  id="add-circ"
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                >
-                  <i
-                    style="color: #3498db; font-size: 80px"
-                    class="fa fa-circle"
-                    aria-hidden="true"
-                  ></i>
-                  <p>Circle</p>
-                </button>
-              </div>
-              <div class="footer-item">
-                <button
-                  id="add-tri"
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                >
-                  <i
-                    style="
-                      color: #2ecc71;
-                      font-size: 80px;
-                      -webkit-transform: rotate(270deg);
-                    "
-                    class="fa fa-play"
-                    aria-hidden="true"
-                  ></i>
-                  <p>Triangle</p>
-                </button>
-              </div>
+    <!--end of shapes panel-->
+    <!--Images Panel-->
+    <div id="images-panel" class="footer" style="display: none">
+      <div class="panel panel-default" style="height: 100%">
+        <div class="panel-body">
+          <div class="footer-panel">
+            <div class="footer-item">
+              <button
+                type="button"
+                class="btn btn-default"
+                onclick="loadImage();"
+              >
+                <i
+                  style="font-size: 50px"
+                  class="fa fa-upload"
+                  aria-hidden="true"
+                ></i>
+                <h5>Upload Image</h5>
+              </button>
+            </div>
+            <div class="footer-item">
+              <button type="button" class="btn btn-default">
+                <i
+                  style="font-size: 50px"
+                  class="fa fa-phone"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+            <div class="footer-item">
+              <button type="button" class="btn btn-default">
+                <i
+                  style="font-size: 50px"
+                  class="fa fa-mobile"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+            <div class="footer-item">
+              <button type="button" class="btn btn-default">
+                <i
+                  style="font-size: 50px"
+                  class="fa fa-map-marker"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+            <div class="footer-item">
+              <button type="button" class="btn btn-default">
+                <i
+                  style="font-size: 50px"
+                  class="fa fa-envelope-o"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+            <div class="footer-item">
+              <button type="button" class="btn btn-default">
+                <i
+                  style="font-size: 50px"
+                  class="fa fa-user"
+                  aria-hidden="true"
+                ></i>
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <!--end of shapes panel-->
-      <!--Images Panel-->
-      <div id="images-panel" class="footer" style="display: none">
-        <div
-          class="bg-white overflow-hidden shadow rounded-lg"
-          style="height: 100%"
-        >
-          <div class="p-3">
-            <div class="grid grid-flow-col auto-cols-max gap-2">
-              <div class="footer-item">
-                <button
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                  onclick="loadImage();"
-                >
-                  <i
-                    style="font-size: 50px"
-                    class="fa fa-upload"
-                    aria-hidden="true"
-                  ></i>
-                  <h5>Upload Image</h5>
-                </button>
-              </div>
-              <div class="footer-item">
-                <button
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                >
-                  <i
-                    style="font-size: 50px"
-                    class="fa fa-phone"
-                    aria-hidden="true"
-                  ></i>
-                </button>
-              </div>
-              <div class="footer-item">
-                <button
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                >
-                  <i
-                    style="font-size: 50px"
-                    class="fa fa-mobile"
-                    aria-hidden="true"
-                  ></i>
-                </button>
-              </div>
-              <div class="footer-item">
-                <button
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                >
-                  <i
-                    style="font-size: 50px"
-                    class="fa fa-map-marker"
-                    aria-hidden="true"
-                  ></i>
-                </button>
-              </div>
-              <div class="footer-item">
-                <button
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                >
-                  <i
-                    style="font-size: 50px"
-                    class="fa fa-envelope-o"
-                    aria-hidden="true"
-                  ></i>
-                </button>
-              </div>
-              <div class="footer-item">
-                <button
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                >
-                  <i
-                    style="font-size: 50px"
-                    class="fa fa-user"
-                    aria-hidden="true"
-                  ></i>
-                </button>
-              </div>
+    </div>
+    <!--end of images panel-->
+    <!--Themes Panel-->
+    <div id="themes-panel" class="footer">
+      <div class="panel panel-default" style="height: 100%">
+        <div class="panel-body">
+          <div class="footer-panel">
+            <div class="footer-item">
+              <button id="load-bcd" type="button" class="btn btn-default">
+                <i
+                  style="font-size: 50px"
+                  class="fa fa-upload"
+                  aria-hidden="true"
+                ></i>
+                <h5>Load your design</h5>
+              </button>
+            </div>
+            <div class="footer-item">
+              <button
+                id="lines"
+                type="button"
+                class="btn btn-default"
+                onclick="loadTemplate('linesandshapes');"
+              >
+                <img src="themes/linesandshapes.png" alt="" />
+                <h5>Lines & Shapes</h5>
+              </button>
+            </div>
+            <div class="footer-item">
+              <button
+                id="lacquer"
+                type="button"
+                class="btn btn-default"
+                onclick="loadTemplate('lacquer');"
+              >
+                <img src="themes/lacquer.png" alt="" />
+                <h5>Lacquer</h5>
+              </button>
+            </div>
+            <div class="footer-item">
+              <button
+                id="lilysmith"
+                type="button"
+                class="btn btn-default"
+                onclick="loadTemplate('lilysmith');"
+              >
+                <img src="themes/lilysmith.png" alt="" />
+                <h5>Lily Smith</h5>
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <!--end of images panel-->
-      <!--Themes Panel-->
-      <div id="themes-panel" class="footer">
-        <div
-          class="bg-white overflow-hidden shadow rounded-lg"
-          style="height: 100%"
-        >
-          <div class="p-3">
-            <div class="grid grid-flow-col auto-cols-max gap-2">
-              <div class="footer-item">
-                <button
-                  id="load-bcd"
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                >
-                  <i
-                    style="font-size: 50px"
-                    class="fa fa-upload"
-                    aria-hidden="true"
-                  ></i>
-                  <h5>Load your design</h5>
-                </button>
-              </div>
-              <div class="footer-item">
-                <button
-                  id="lines"
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                  onclick="loadTemplate('linesandshapes');"
-                >
-                  <img class="h-24" src="themes/linesandshapes.png" alt="" />
-                  <h5>Lines & Shapes</h5>
-                </button>
-              </div>
-              <div class="footer-item">
-                <button
-                  id="lacquer"
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                  onclick="loadTemplate('lacquer');"
-                >
-                  <img class="h-24" src="themes/lacquer.png" alt="" />
-                  <h5>Lacquer</h5>
-                </button>
-              </div>
-              <div class="footer-item">
-                <button
-                  id="lilysmith"
-                  type="button"
-                  class="
-                    inline-flex
-                    items-center
-                    px-3
-                    py-2
-                    border border-transparent
-                    text-sm
-                    leading-4
-                    font-medium
-                    rounded-md
-                    shadow-sm
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-offset-2
-                    focus:ring-indigo-500
-                  "
-                  onclick="loadTemplate('lilysmith');"
-                >
-                  <img class="h-24" src="themes/lilysmith.png" alt="" />
-                  <h5>Lily Smith</h5>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--end of themes panel-->
-    </footer>
+    </div>
+    <!--end of themes panel-->
 
     <script type="text/javascript">
       // window.onbeforeunload = function() {
@@ -1056,26 +425,27 @@
         selectLayer(selected_obj.get("id"));
 
         if (selected_obj.get("type") == "i-text") {
-          document.getElementById("text-font").parentNode.style.display = "";
+          document.getElementById("text-font").parentNode.style.display =
+            "table";
           document.getElementById("text-font").value =
             e.target.get("fontFamily");
           document.getElementById("text-fontsize").parentNode.style.display =
-            "";
+            "table";
           document.getElementById("text-fontsize").value =
             e.target.get("fontSize");
           document.getElementById("text-fontweight").parentNode.style.display =
-            "";
+            "table";
           document.getElementById("text-fontweight").value =
             e.target.get("fontWeight");
           document.getElementById("color").value = rgb2hex(
             e.target.get("fill")
           );
-          document.getElementById("color").parentNode.style.display = "";
+          document.getElementById("color").parentNode.style.display = "table";
         } else if (selected_obj.get("type") == "image") {
           document.getElementById("color").parentNode.style.display = "none";
         } else {
           document.getElementById("color").value = e.target.get("fill");
-          document.getElementById("color").parentNode.style.display = "";
+          document.getElementById("color").parentNode.style.display = "table";
         }
         document.getElementById("width").value = Math.round(
           e.target.get("width") * e.target.get("scaleX")
@@ -1097,15 +467,15 @@
           "none";
         document.getElementById("text-fontweight").parentNode.style.display =
           "none";
-        document.getElementById("color").parentNode.style.display = "";
+        document.getElementById("color").parentNode.style.display = "table";
         document.getElementById("color").value = "";
-        document.getElementById("width").parentNode.style.display = "";
+        document.getElementById("width").parentNode.style.display = "table";
         document.getElementById("width").value = "";
-        document.getElementById("height").parentNode.style.display = "";
+        document.getElementById("height").parentNode.style.display = "table";
         document.getElementById("height").value = "";
-        document.getElementById("angle").parentNode.style.display = "";
+        document.getElementById("angle").parentNode.style.display = "table";
         document.getElementById("angle").value = "";
-        document.getElementById("opacity").parentNode.style.display = "";
+        document.getElementById("opacity").parentNode.style.display = "table";
         document.getElementById("opacity").value = "";
 
         var layeritems = document.getElementsByClassName("layeritem");
@@ -1507,11 +877,11 @@
       function add_layer(id, loading) {
         var li = document.createElement("LI");
         li.setAttribute("id", id);
-        li.setAttribute("class", "layeritem pt-2");
+        li.setAttribute("class", "layeritem");
         var div = document.createElement("DIV");
-        div.setAttribute("class", "bg-white shadow rounded-lg");
+        div.setAttribute("class", "panel panel-default");
         var innerdiv = document.createElement("DIV");
-        innerdiv.setAttribute("class", "layer p-3");
+        innerdiv.setAttribute("class", "layer panel-body");
         var layer_name = document.createTextNode("Layer " + id);
         var span = document.createElement("SPAN");
         span.setAttribute("for", "layer" + id);
@@ -1525,10 +895,7 @@
         var delete_btn = document.createElement("BUTTON");
         delete_btn.setAttribute("id", id);
         delete_btn.setAttribute("type", "button");
-        delete_btn.setAttribute(
-          "class",
-          "delete-layer inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-        );
+        delete_btn.setAttribute("class", "delete-layer btn btn-default");
         var i = document.createElement("I");
         i.setAttribute("class", "fa fa-trash");
         i.setAttribute("aria-hidden", "true");
@@ -1553,20 +920,14 @@
           $(this).hide();
           $("#" + $(this).attr("for"))
             .val($(this).text())
-            .toggleClass(
-              "focus:ring-sky-500 focus:border-sky-500 flex-grow block w-full min-w-0 rounded-none rounded-r-md text-sm border-gray-300"
-            )
+            .toggleClass("form-control")
             .show()
             .focus();
         });
 
         $(".blur").blur(function () {
           "use strict";
-          $(this)
-            .hide()
-            .toggleClass(
-              "focus:ring-sky-500 focus:border-sky-500 flex-grow block w-full min-w-0 rounded-none rounded-r-md text-sm border-gray-300"
-            );
+          $(this).hide().toggleClass("form-control");
           $("span[for=" + this.id + "]")
             .text($(this).val())
             .show();
