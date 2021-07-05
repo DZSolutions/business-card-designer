@@ -530,15 +530,21 @@
             </div>
           </div>
           <!--end of properties panel-->
-          <div id="layers" class="bg-white shadow rounded-lg">
+          <div
+            id="layers"
+            class="bg-white shadow rounded-lg overflow-auto max-h-96"
+          >
             <div class="p-3">
               <h4 style="color: grey">Layers</h4>
 
               <ul class="background">
                 <li onclick="deneme();">
-                  <div class="bg-white shadow rounded-lg">
-                    <div class="layer p-3">
-                      Background
+                  <div
+                    class="bg-white shadow rounded-lg border-2 border-gray-300"
+                  >
+                    <div class="layer p-3 flex justify-between">
+                      <div>Background</div>
+
                       <button
                         id="canvas-props"
                         type="button"
@@ -581,7 +587,6 @@
         m-auto
         fixed
         bottom-0
-        bg-black bg-opacity-10
         z-0
         flex
         justify-center
@@ -1509,10 +1514,14 @@
         li.setAttribute("id", id);
         li.setAttribute("class", "layeritem pt-2");
         var div = document.createElement("DIV");
-        div.setAttribute("class", "bg-white shadow rounded-lg");
+        div.setAttribute(
+          "class",
+          "bg-white shadow rounded-lg border-2 border-gray-300"
+        );
         var innerdiv = document.createElement("DIV");
-        innerdiv.setAttribute("class", "layer p-3");
+        innerdiv.setAttribute("class", "layer p-3 flex justify-between");
         var layer_name = document.createTextNode("Layer " + id);
+
         var span = document.createElement("SPAN");
         span.setAttribute("for", "layer" + id);
         span.setAttribute("class", "clickMe");
