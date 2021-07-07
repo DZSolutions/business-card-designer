@@ -256,10 +256,10 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-shrink-0 p-2">
+      <div class="flex p-2 flex-shrink-0">
         <div class="grid grid-cols-1 gap-4">
           <div id="properties" class="bg-white shadow rounded-lg">
-            <div class="p-3">
+            <div class="p-3 w-72">
               <h4 style="color: grey">Properties</h4>
               <div class="mt-1 rounded-md shadow-sm flex" style="display: none">
                 <span
@@ -268,13 +268,13 @@
                     border border-r-0 border-gray-300
                     rounded-l-md
                     px-3
-                    w-40
                     inline-flex
+                    w-44
                     items-center
                     text-gray-500 text-sm
                   "
                   id="basic-addon1"
-                  >Font:</span
+                  >Font</span
                 >
                 <select
                   class="
@@ -310,13 +310,13 @@
                     border border-r-0 border-gray-300
                     rounded-l-md
                     px-3
-                    w-40
                     inline-flex
+                    w-44
                     items-center
                     text-gray-500 text-sm
                   "
                   id="basic-addon1"
-                  >Font Size:</span
+                  >Font Size</span
                 >
                 <input
                   id="text-fontsize"
@@ -342,13 +342,13 @@
                     border border-r-0 border-gray-300
                     rounded-l-md
                     px-3
-                    w-40
                     inline-flex
+                    w-44
                     items-center
                     text-gray-500 text-sm
                   "
                   id="basic-addon1"
-                  >Font Weight:</span
+                  >Font Weight</span
                 >
                 <select
                   class="
@@ -374,13 +374,13 @@
                     border border-r-0 border-gray-300
                     rounded-l-md
                     px-3
-                    w-40
                     inline-flex
+                    w-44
                     items-center
                     text-gray-500 text-sm
                   "
                   id="basic-addon1"
-                  >Width:</span
+                  >Width</span
                 >
                 <input
                   id="width"
@@ -406,13 +406,13 @@
                     border border-r-0 border-gray-300
                     rounded-l-md
                     px-3
-                    w-40
                     inline-flex
+                    w-44
                     items-center
                     text-gray-500 text-sm
                   "
                   id="basic-addon1"
-                  >Height:</span
+                  >Height</span
                 >
                 <input
                   id="height"
@@ -438,13 +438,13 @@
                     border border-r-0 border-gray-300
                     rounded-l-md
                     px-3
-                    w-40
                     inline-flex
+                    w-44
                     items-center
                     text-gray-500 text-sm
                   "
                   id="basic-addon1"
-                  >Angle:</span
+                  >Angle</span
                 >
                 <input
                   id="angle"
@@ -470,13 +470,13 @@
                     border border-r-0 border-gray-300
                     rounded-l-md
                     px-3
-                    w-40
                     inline-flex
+                    w-44
                     items-center
                     text-gray-500 text-sm
                   "
                   id="basic-addon1"
-                  >Color:</span
+                  >Color</span
                 >
                 <input
                   id="color"
@@ -495,6 +495,39 @@
                   aria-describedby="basic-addon1"
                 />
               </div>
+              <div class="mt-10 flex justify-center" style="display: none">
+                <label
+                  id="bg-image"
+                  class="
+                    px-3
+                    py-6
+                    border border-transparent
+                    text-sm
+                    leading-4
+                    font-medium
+                    rounded-md
+                    shadow-sm
+                    text-white
+                    bg-indigo-600
+                    hover:bg-indigo-700
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-offset-2
+                    focus:ring-indigo-500
+                    cursor-pointer
+                  "
+                >
+                  Upload Background Image
+                  <i class="fa fa-upload" aria-hidden="true"></i>
+                  <input
+                    id="bg-image-upload"
+                    type="file"
+                    class="hidden"
+                    accept="image/*"
+                  />
+                </label>
+              </div>
+
               <div class="mt-1 rounded-md shadow-sm flex">
                 <span
                   class="
@@ -502,13 +535,13 @@
                     border border-r-0 border-gray-300
                     rounded-l-md
                     px-3
-                    w-40
                     inline-flex
+                    w-44
                     items-center
                     text-gray-500 text-sm
                   "
                   id="basic-addon1"
-                  >Opacity:</span
+                  >Opacity</span
                 >
                 <input
                   id="opacity"
@@ -538,7 +571,8 @@
               <h4 style="color: grey">Layers</h4>
 
               <ul class="background">
-                <li onclick="deneme();">
+                <!-- <li onclick="deneme();"> -->
+                <li onclick="">
                   <div
                     class="bg-white shadow rounded-lg border-2 border-gray-300"
                   >
@@ -1112,6 +1146,7 @@
         document.getElementById("angle").value = "";
         document.getElementById("opacity").parentNode.style.display = "";
         document.getElementById("opacity").value = "";
+        document.getElementById("bg-image").parentNode.style.display = "none";
 
         var layeritems = document.getElementsByClassName("layeritem");
         for (var i = 0; i < layeritems.length; i++) {
@@ -1146,7 +1181,7 @@
 
       canvas.on("object:added", onObjectAdded);
       function onObjectAdded(e) {
-        //Doesn't work :(
+        // Doesn't work
         selected_obj = searchObjById(e.target.get("id"));
         canvas.setActiveObject(selected_obj);
         canvas.renderAll();
@@ -1159,12 +1194,10 @@
         }
       });
 
-      $("#text-fontsize").on("keydown", function () {
-        if (event.which == 13 || event.keyCode == 13) {
-          if (selected_obj != null) {
-            selected_obj.set("fontSize", parseInt($(this).val()));
-            canvas.renderAll();
-          }
+      $("#text-fontsize").on("change", function () {
+        if (selected_obj != null) {
+          selected_obj.set("fontSize", parseInt($(this).val()));
+          canvas.renderAll();
         }
       });
       $("#text-fontsize").on("blur", function () {
@@ -1183,12 +1216,10 @@
         }
       });
 
-      $("#width").on("keydown", function () {
-        if (event.which == 13 || event.keyCode == 13) {
-          if (selected_obj != null) {
-            selected_obj.set("width", Math.round(parseInt($(this).val())));
-            canvas.renderAll();
-          }
+      $("#width").on("change", function () {
+        if (selected_obj != null) {
+          selected_obj.set("width", Math.round(parseInt($(this).val())));
+          canvas.renderAll();
         }
       });
 
@@ -1202,12 +1233,10 @@
         }
       });
 
-      $("#height").on("keydown", function () {
-        if (event.which == 13 || event.keyCode == 13) {
-          if (selected_obj != null) {
-            selected_obj.set("height", Math.round(parseInt($(this).val())));
-            canvas.renderAll();
-          }
+      $("#height").on("change", function () {
+        if (selected_obj != null) {
+          selected_obj.set("height", Math.round(parseInt($(this).val())));
+          canvas.renderAll();
         }
       });
 
@@ -1221,12 +1250,10 @@
         }
       });
 
-      $("#angle").on("keydown", function () {
-        if (event.which == 13 || event.keyCode == 13) {
-          if (selected_obj != null) {
-            selected_obj.setAngle(Math.round(parseInt($(this).val())));
-            canvas.renderAll();
-          }
+      $("#angle").on("change", function () {
+        if (selected_obj != null) {
+          selected_obj.setAngle(Math.round(parseInt($(this).val())));
+          canvas.renderAll();
         }
       });
 
@@ -1240,17 +1267,15 @@
         }
       });
 
-      $("#color").on("keydown", function () {
-        if (event.which == 13 || event.keyCode == 13) {
-          if (edit_canvas == 1) {
-            canvas.backgroundColor = $(this).val();
-          } else {
-            if (selected_obj != null) {
-              selected_obj.setColor($(this).val());
-            }
+      $("#color").on("change", function () {
+        if (edit_canvas == 1) {
+          canvas.backgroundColor = $(this).val();
+        } else {
+          if (selected_obj != null) {
+            selected_obj.setColor($(this).val());
           }
-          canvas.renderAll();
         }
+        canvas.renderAll();
       });
 
       $("#color").on("blur", function () {
@@ -1267,14 +1292,12 @@
         }
       });
 
-      $("#opacity").on("keydown", function () {
-        if (event.which == 13 || event.keyCode == 13) {
-          if (selected_obj != null) {
-            selected_obj.set({
-              opacity: $(this).val(),
-            });
-            canvas.renderAll();
-          }
+      $("#opacity").on("change", function () {
+        if (selected_obj != null) {
+          selected_obj.set({
+            opacity: $(this).val(),
+          });
+          canvas.renderAll();
         }
       });
       $("#opacity").on("blur", function () {
@@ -1285,6 +1308,54 @@
           document.getElementById("opacity").value = "";
         }
       });
+
+      document.getElementById("bg-image-upload").onchange = function loadImage(
+        e
+      ) {
+        var file = e.target.files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function (f) {
+          var data = f.target.result;
+          fabric.Image.fromURL(data, function (img) {
+            img.scaleToWidth(canvas.width);
+            img.scaleToHeight(canvas.height);
+            img.set({
+              left: canvas.width / 2 - (img.width * img.scaleY) / 2,
+            });
+            canvas.setBackgroundImage(img);
+            canvas.requestRenderAll();
+          });
+        };
+        "#bg-image-upload"[0].value = "";
+      };
+
+      // document.getElementById("imgLoader").onchange = function handleImage(e) {
+      //   var file = e.target.files[0];
+      //   var reader = new FileReader();
+      //   reader.onload = function (f) {
+      //     var data = f.target.result;
+      //     fabric.Image.fromURL(data, function (img) {
+      //       var oImg = img.set({
+      //         angle: 0,
+      //         padding: 10,
+      //         cornersize: 10,
+      //         id: global_id,
+      //       });
+      //       canvas.centerObject(oImg);
+      //       add_layer(global_id);
+      //       global_id++;
+      //       canvas.add(oImg);
+      //       onSelectionCleared();
+      //       canvas.setActiveObject(oImg);
+      //       canvas.renderAll();
+      //       selected_obj = oImg;
+      //       var dataURL = canvas.toDataURL({ format: "png", quality: 0.8 });
+      //     });
+      //   };
+      //   reader.readAsDataURL(file);
+      //   $("#imgLoader")[0].value = "";
+      // };
 
       //Adding Objects
 
@@ -1507,6 +1578,7 @@
         document.getElementById("opacity").parentNode.style.display = "none";
 
         document.getElementById("color").value = canvas.backgroundColor;
+        document.getElementById("bg-image").parentNode.style.display = "";
       });
 
       function add_layer(id, loading) {
@@ -1678,7 +1750,6 @@
               ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2)
           : "";
       }
-
       function loadTemplate(template) {
         var linesandshapes = {
           objects: [
